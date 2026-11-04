@@ -2,7 +2,7 @@ process DEACON_FILTER {
     tag "$meta.id"
     label 'process_medium'
 
-    container 'community.wave.seqera.io/library/deacon:0.19.1--895b1fa7c4a50130'
+    container 'community.wave.seqera.io/library/deacon_ca-certificates:6183979d748b6328'
 
     input:
     tuple val(meta), path(reads)

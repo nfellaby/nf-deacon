@@ -2,7 +2,7 @@ process DEACON_INDEX_BUILD {
     tag "$fasta"
     label 'process_medium'
 
-    container 'community.wave.seqera.io/library/deacon:0.19.1--895b1fa7c4a50130'
+    container 'community.wave.seqera.io/library/deacon_ca-certificates:6183979d748b6328'
 
     input:
     path fasta
@@ -32,7 +32,7 @@ process DEACON_INDEX_FETCH {
     tag "$name"
     label 'process_single'
 
-    container 'community.wave.seqera.io/library/deacon:0.19.1--895b1fa7c4a50130'
+    container 'community.wave.seqera.io/library/deacon_ca-certificates:6183979d748b6328'
 
     input:
     val name
