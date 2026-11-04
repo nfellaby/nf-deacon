@@ -44,6 +44,13 @@ process DEACON_INDEX_FETCH {
     script:
     def args = task.ext.args ?: ''
     """
+    # rustls needs a CA bundle; conda-built images have no system certificate store
+    if [[ -z "\${SSL_CERT_FILE:-}" ]]; then
+        for f in "\${CONDA_PREFIX:-/opt/conda}/ssl/cacert.pem" /opt/conda/ssl/cacert.pem; do
+            if [[ -s "\$f" ]]; then export SSL_CERT_FILE="\$f"; break; fi
+        done
+    fi
+    
     deacon index fetch $args $name
 
     cat <<-END_VERSIONS > versions.yml
