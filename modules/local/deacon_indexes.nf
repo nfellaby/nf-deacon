@@ -57,5 +57,5 @@ process DEACON_INDEX_FETCH {
     "${task.process}":
         deacon: \$(deacon --version | sed 's/deacon //')
     END_VERSIONS
-    """
+    """             
 }
