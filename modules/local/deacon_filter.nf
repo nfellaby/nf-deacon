@@ -33,5 +33,5 @@ process DEACON_FILTER {
     "${task.process}":
         deacon: \$(deacon --version | sed 's/deacon //')
     END_VERSIONS
-    """
+    """                
 }
